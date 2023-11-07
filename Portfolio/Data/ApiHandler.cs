@@ -24,17 +24,18 @@ public class GithubInfo
     public string? Name { get; set; }
     public string? Login { get; set; }
     public string? Html_Url { get; set; }
-    public bool Private { get; set; }
+    public DateTime Created_At { get; set; }
+    public DateTime Updated_At { get; set; }
    
 
-    public GithubInfo(int id, string name, string login, string html_url)
+    public GithubInfo(int id, string name, string login, string html_url, DateTime created_at, DateTime updated_at)
     {
         ID = id;
         Name = name;
         Login = login;
         Html_Url = html_url;
-
-        
+        Created_At = created_at;
+        Updated_At = updated_at;
     }
 }
 

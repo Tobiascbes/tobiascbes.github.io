@@ -8,33 +8,52 @@
 
 <h1> GitHub Repos: @githubInfos.Count()</h1>
 
+<div class="box">
+    @foreach (var github in githubInfos)
+    {
+        @while (githubInfos.Count < 3)
+        {
+            <div class="card">
 
-@foreach (var github in githubInfos)
-{
-    <div class="card">
 
-        <div class="container">
-            <h4><b>@github.Name</b></h4>
-            <p>ID: @github.ID</p>
-            <p>Login: @github.Login</p>
-            <a href="@github.Html_Url">Link: @github.Html_Url</a>
-            <p>@github.Private</p>
-        </div>
-    </div>
-}
+                <h4 style="text-decoration: underline;"><b>@github.Name</b></h4>
+                <p>Created: @github.Created_At</p>
+                <p>ID: @github.ID</p>
+                <a href="@github.Html_Url">Link: @github.Name</a>
+                <p>Last updated: @github.Updated_At</p>
+
+            </div>
+        }
+    
+    }
+</div>
+
 
 
 
 <style>
+
+    .box {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-auto-rows: minmax(200px, auto);
+        grid-gap: 1rem;
+    }
+
+
     .card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
+        padding: 25px;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
 
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
 
     .container {
         padding: 2px 16px;
@@ -42,7 +61,7 @@
 </style>
 
 
-@code{
+@code {
 
     List<GithubInfo> githubInfos = new List<GithubInfo>();
 
