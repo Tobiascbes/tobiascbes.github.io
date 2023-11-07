@@ -1,0 +1,53 @@
+﻿@using Portfolio.Data
+@inject ApiHandler apiHandler
+@page "/projects"
+
+
+
+<PageTitle>Projects</PageTitle>
+
+<h1> GitHub Repos: @githubInfos.Count()</h1>
+
+
+@foreach (var github in githubInfos)
+{
+    <div class="card">
+
+        <div class="container">
+            <h4><b>@github.Name</b></h4>
+            <p>ID: @github.ID</p>
+            <p>Login: @github.Login</p>
+            <a href="@github.Html_Url">Link: @github.Html_Url</a>
+            <p>@github.Private</p>
+        </div>
+    </div>
+}
+
+
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .container {
+        padding: 2px 16px;
+    }
+</style>
+
+
+@code{
+
+    List<GithubInfo> githubInfos = new List<GithubInfo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        githubInfos = apiHandler.githubInfos();
+    }
+}

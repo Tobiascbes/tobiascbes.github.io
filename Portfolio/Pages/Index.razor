@@ -1,0 +1,93 @@
+﻿@page "/"
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave"
+      @* TODO; Github API, Project link, contact info*@
+
+
+<PageTitle> Tobias C. Besser </PageTitle>
+
+@*<div class="navBar">
+        <a href=""> About </a>
+        <a href=""> Contact </a>
+        <a href=""> Portfolio </a>
+    </div>*@
+
+<div class="wrapper">
+
+    <div class="intro">
+
+        <div class="headline">
+            <center>
+                <h1> Data- og Kommunikationuddannelse </h1>
+                <h3> Med speciale i programmering</h3>
+            </center>
+        </div>
+
+    </div>
+
+    <div class="links">
+        <i class="fa-solid fa-user"><a href="About"> About </a></i> <br />
+        <i class="fa-solid fa-code"><a href="/projects"> Projekter </a></i> <br />
+        <i class="fa-solid fa-address-book"><a href=""> Kontakt </a></i>
+
+    </div>
+</div>
+
+<style>
+    * {
+        background-color: lightgray;
+    }
+
+    .navBar {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: large;
+        text-decoration: none;
+    }
+
+    .wrapper {
+        background-color: lightgray;
+       
+    }
+
+    .intro {
+        float: left;
+        width: 50%;
+        margin-left: 20%;
+        margin-right: 20%;
+        
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        font-size: xx-large;
+    }
+
+    .headline h1 {
+        margin-top: 25%;
+        text-align: start;
+        padding-bottom: 0;
+        font-family: "Sedgwick Ave";
+        font-weight: bolder;
+        margin-bottom: 0;
+    }
+
+    .headline h3 {
+        text-align: start;
+        padding-top: 10px;
+        font-weight: lighter;
+        margin-top: 0;
+    }
+    .links{
+        padding-top: 10%;
+        float: right;
+        width: 50%;
+        font-size: 50px;
+        
+        
+        
+    }
+        .links a {
+            text-decoration: none;
+            color: black;
+            font-family: "Sedgwick Ave";
+        }
+</style>
